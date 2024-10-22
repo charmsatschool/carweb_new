@@ -1,6 +1,5 @@
-{
 node('appserver_3120_60')
-
+{
 def app
 stage('Cloning Git')
 {
@@ -8,11 +7,11 @@ stage('Cloning Git')
 
 }
 
-stage('Build-and_Tag')
+stage('Build-and-Tag')
 {
     /* This build s the acutal image;
         * This is synonymous to docker  build on the command line */
-    app.docker.build('charmsforschool/car_web')
+    app = docker.build('charmsforschool/car_web')
 }
 
 stage('Post-to-dockerhub')
